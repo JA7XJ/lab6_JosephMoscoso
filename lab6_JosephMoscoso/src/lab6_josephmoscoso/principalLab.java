@@ -19,6 +19,7 @@ public class principalLab extends javax.swing.JFrame {
      */
     public principalLab() {
         initComponents();
+        pred();
     }
 
     /**
@@ -377,6 +378,96 @@ public class principalLab extends javax.swing.JFrame {
         pelicula.get(9).getSubtitulos().add("Aleman");
         pelicula.get(9).getComentarios().add("Accion del monton");
         pelicula.get(9).getActores().add("Bruce Willis");
+        serie.add(new series("323232","Breaking Bad",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.get(0).getIdiomas().add("Español");
+        serie.get(0).getIdiomas().add("Ingles");
+        serie.get(0).getIdiomas().add("Aleman");
+        serie.get(0).getSubtitulos().add("Español");
+        serie.get(0).getSubtitulos().add("Ingles");
+        serie.get(0).getSubtitulos().add("Aleman");
+        serie.get(0).getComentarios().add("Buen desarrollo de personajes");
+        serie.get(0).getActores().add("Walter");
+        serie.add(new series("xxxxxx","House of Cards",5, "Seinen","50",5,"Desconocido","Desconocido"));
+        serie.get(1).getIdiomas().add("Español");
+        serie.get(1).getIdiomas().add("Ingles");
+        serie.get(1).getIdiomas().add("Aleman");
+        serie.get(1).getSubtitulos().add("Español");
+        serie.get(1).getSubtitulos().add("Ingles");
+        serie.get(1).getSubtitulos().add("Aleman");
+        serie.get(1).getComentarios().add("Buen desarrollo de personajes");
+        serie.get(1).getActores().add("Kevin Spacey");
+        serie.add(new series("cccccc","Devilman Crybaby",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.get(2).getIdiomas().add("Español");
+        serie.get(2).getIdiomas().add("Ingles");
+        serie.get(2).getIdiomas().add("Aleman");
+        serie.get(2).getSubtitulos().add("Español");
+        serie.get(2).getSubtitulos().add("Ingles");
+        serie.get(2).getSubtitulos().add("Aleman");
+        serie.get(2).getComentarios().add("Buen desarrollo de personajes y buen gore a veces");
+        serie.get(2).getActores().add("Desconocido");
+        serie.add(new series("vvvvvv","Neon Genesis Evangelion",5, "Accion/psicologico","30",5,"Desconocido","Hideaki Anno"));
+        serie.get(3).getIdiomas().add("Español");
+        serie.get(3).getIdiomas().add("Ingles");
+        serie.get(3).getIdiomas().add("Aleman");
+        serie.get(3).getSubtitulos().add("Español");
+        serie.get(3).getSubtitulos().add("Ingles");
+        serie.get(3).getSubtitulos().add("Aleman");
+        serie.get(3).getComentarios().add("Buen desarrollo de personajes");
+        serie.get(3).getActores().add("Desconocido");
+        serie.add(new series("vvvvvv","this",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.get(4).getIdiomas().add("Español");
+        serie.get(4).getIdiomas().add("Ingles");
+        serie.get(4).getIdiomas().add("Aleman");
+        serie.get(4).getSubtitulos().add("Español");
+        serie.get(4).getSubtitulos().add("Ingles");
+        serie.get(4).getSubtitulos().add("Aleman");
+        serie.get(4).getComentarios().add("Buen desarrollo de personajes");
+        serie.get(4).getActores().add("Walter");
+        serie.add(new series("zzzzzz","x",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.get(5).getIdiomas().add("Español");
+        serie.get(5).getIdiomas().add("Ingles");
+        serie.get(5).getIdiomas().add("Aleman");
+        serie.get(5).getSubtitulos().add("Español");
+        serie.get(5).getSubtitulos().add("Ingles");
+        serie.get(5).getSubtitulos().add("Aleman");
+        serie.get(5).getComentarios().add("Buen desarrollo de personajes");
+        serie.get(5).getActores().add("Walter");
+        serie.add(new series("3ssss","Hannibal",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.get(6).getIdiomas().add("Español");
+        serie.get(6).getIdiomas().add("Ingles");
+        serie.get(6).getIdiomas().add("Aleman");
+        serie.get(6).getSubtitulos().add("Español");
+        serie.get(6).getSubtitulos().add("Ingles");
+        serie.get(6).getSubtitulos().add("Aleman");
+        serie.get(6).getComentarios().add("Buen desarrollo de personajes");
+        serie.get(6).getActores().add("Walter");
+        serie.add(new series("ggggg","k",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.get(7).getIdiomas().add("Español");
+        serie.get(7).getIdiomas().add("Ingles");
+        serie.get(7).getIdiomas().add("Aleman");
+        serie.get(7).getSubtitulos().add("Español");
+        serie.get(7).getSubtitulos().add("Ingles");
+        serie.get(7).getSubtitulos().add("Aleman");
+        serie.get(7).getComentarios().add("Buen desarrollo de personajes");
+        serie.get(7).getActores().add("Walter");
+        serie.add(new series("wwwww","w",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.get(8).getIdiomas().add("Español");
+        serie.get(8).getIdiomas().add("Ingles");
+        serie.get(8).getIdiomas().add("Aleman");
+        serie.get(8).getSubtitulos().add("Español");
+        serie.get(8).getSubtitulos().add("Ingles");
+        serie.get(8).getSubtitulos().add("Aleman");
+        serie.get(8).getComentarios().add("Buen desarrollo de personajes");
+        serie.get(8).getActores().add("Walter");
+        serie.add(new series("yyyyyy","y",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.get(9).getIdiomas().add("Español");
+        serie.get(9).getIdiomas().add("Ingles");
+        serie.get(9).getIdiomas().add("Aleman");
+        serie.get(9).getSubtitulos().add("Español");
+        serie.get(9).getSubtitulos().add("Ingles");
+        serie.get(9).getSubtitulos().add("Aleman");
+        serie.get(9).getComentarios().add("Buen desarrollo de personajes");
+        serie.get(9).getActores().add("Walter");
     }
     private void jb_registrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_registrarseMouseClicked
         // TODO add your handling code here:
