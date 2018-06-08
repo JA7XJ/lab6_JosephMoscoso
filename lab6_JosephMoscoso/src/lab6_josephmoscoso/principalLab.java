@@ -5,6 +5,11 @@
  */
 package lab6_josephmoscoso;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -60,6 +65,16 @@ public class principalLab extends javax.swing.JFrame {
         jb_agregarf = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jd_admin = new javax.swing.JDialog();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jl_admin1 = new javax.swing.JList<>();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jl_admin2 = new javax.swing.JList<>();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -228,6 +243,63 @@ public class principalLab extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane4.setViewportView(jTextArea1);
 
+        jLabel14.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel14.setText("Administrador");
+
+        jLabel15.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel15.setText("Peliculas");
+
+        jLabel16.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel16.setText("Series");
+
+        jl_admin1.setModel(new DefaultListModel());
+        jScrollPane6.setViewportView(jl_admin1);
+
+        jl_admin2.setModel(new DefaultListModel());
+        jScrollPane7.setViewportView(jl_admin2);
+
+        javax.swing.GroupLayout jd_adminLayout = new javax.swing.GroupLayout(jd_admin.getContentPane());
+        jd_admin.getContentPane().setLayout(jd_adminLayout);
+        jd_adminLayout.setHorizontalGroup(
+            jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_adminLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel16)
+                .addGap(134, 134, 134))
+            .addGroup(jd_adminLayout.createSequentialGroup()
+                .addGroup(jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_adminLayout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addComponent(jLabel14))
+                    .addGroup(jd_adminLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        jd_adminLayout.setVerticalGroup(
+            jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_adminLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addGroup(jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7))
+                .addContainerGap(86, Short.MAX_VALUE))
+        );
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane5.setViewportView(jTextArea2);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
@@ -319,8 +391,8 @@ public class principalLab extends javax.swing.JFrame {
         try {
             for (Usuarios u : usuario) {
                 if (correo.equals(u.getCorreo()) && contra.equals(u.getContraseña())) {
-                    DefaultListModel m=(DefaultListModel) jl_pelis.getModel();;
-                    DefaultListModel x=(DefaultListModel) jl_series.getModel();;
+                    DefaultListModel m = (DefaultListModel) jl_pelis.getModel();;
+                    DefaultListModel x = (DefaultListModel) jl_series.getModel();;
                     for (int i = 0; i < pelicula.size(); i++) {
                         m.addElement(pelicula.get(i));
                         jl_pelis.setModel(m);
@@ -337,6 +409,24 @@ public class principalLab extends javax.swing.JFrame {
                     jd_uniflix.setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(this, "Error, correo o contraseña incorrectos");
+                }
+                if (correo.equals("Admin") && contra.equals("Admin")) {
+                    DefaultListModel m = (DefaultListModel) jl_pelis.getModel();;
+                    DefaultListModel x = (DefaultListModel) jl_series.getModel();;
+                    for (int i = 0; i < pelicula.size(); i++) {
+                        m.addElement(pelicula.get(i));
+                        jl_pelis.setModel(m);
+                    }
+                    for (int i = 0; i < serie.size(); i++) {
+                        x.addElement(serie.get(i));
+                        jl_series.setModel(x);
+                    }
+//                    jl_pelis.setModel(m);
+//                    jl_series.setModel(x);
+                    jd_admin.setModal(true);
+                    jd_admin.pack();
+                    jd_admin.setLocationRelativeTo(this);
+                    jd_admin.setVisible(true);
                 }
 
             }
@@ -478,7 +568,7 @@ public class principalLab extends javax.swing.JFrame {
         pelicula.get(9).getSubtitulos().add("Aleman");
         pelicula.get(9).getComentarios().add("Accion del monton");
         pelicula.get(9).getActores().add("Bruce Willis");
-        serie.add(new series("323232","Breaking Bad",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.add(new series("323232", "Breaking Bad", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
         serie.get(0).getIdiomas().add("Español");
         serie.get(0).getIdiomas().add("Ingles");
         serie.get(0).getIdiomas().add("Aleman");
@@ -487,7 +577,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(0).getSubtitulos().add("Aleman");
         serie.get(0).getComentarios().add("Buen desarrollo de personajes");
         serie.get(0).getActores().add("Walter");
-        serie.add(new series("xxxxxx","House of Cards",5, "Seinen","50",5,"Desconocido","Desconocido"));
+        serie.add(new series("xxxxxx", "House of Cards", 5, "Seinen", "50", 5, "Desconocido", "Desconocido"));
         serie.get(1).getIdiomas().add("Español");
         serie.get(1).getIdiomas().add("Ingles");
         serie.get(1).getIdiomas().add("Aleman");
@@ -496,7 +586,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(1).getSubtitulos().add("Aleman");
         serie.get(1).getComentarios().add("Buen desarrollo de personajes");
         serie.get(1).getActores().add("Kevin Spacey");
-        serie.add(new series("cccccc","Devilman Crybaby",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.add(new series("cccccc", "Devilman Crybaby", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
         serie.get(2).getIdiomas().add("Español");
         serie.get(2).getIdiomas().add("Ingles");
         serie.get(2).getIdiomas().add("Aleman");
@@ -505,7 +595,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(2).getSubtitulos().add("Aleman");
         serie.get(2).getComentarios().add("Buen desarrollo de personajes y buen gore a veces");
         serie.get(2).getActores().add("Desconocido");
-        serie.add(new series("vvvvvv","Neon Genesis Evangelion",5, "Accion/psicologico","30",5,"Desconocido","Hideaki Anno"));
+        serie.add(new series("vvvvvv", "Neon Genesis Evangelion", 5, "Accion/psicologico", "30", 5, "Desconocido", "Hideaki Anno"));
         serie.get(3).getIdiomas().add("Español");
         serie.get(3).getIdiomas().add("Ingles");
         serie.get(3).getIdiomas().add("Aleman");
@@ -514,7 +604,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(3).getSubtitulos().add("Aleman");
         serie.get(3).getComentarios().add("Buen desarrollo de personajes");
         serie.get(3).getActores().add("Desconocido");
-        serie.add(new series("vvvvvv","this",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.add(new series("vvvvvv", "this", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
         serie.get(4).getIdiomas().add("Español");
         serie.get(4).getIdiomas().add("Ingles");
         serie.get(4).getIdiomas().add("Aleman");
@@ -523,7 +613,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(4).getSubtitulos().add("Aleman");
         serie.get(4).getComentarios().add("Buen desarrollo de personajes");
         serie.get(4).getActores().add("Walter");
-        serie.add(new series("zzzzzz","x",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.add(new series("zzzzzz", "x", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
         serie.get(5).getIdiomas().add("Español");
         serie.get(5).getIdiomas().add("Ingles");
         serie.get(5).getIdiomas().add("Aleman");
@@ -532,7 +622,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(5).getSubtitulos().add("Aleman");
         serie.get(5).getComentarios().add("Buen desarrollo de personajes");
         serie.get(5).getActores().add("Walter");
-        serie.add(new series("3ssss","Hannibal",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.add(new series("3ssss", "Hannibal", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
         serie.get(6).getIdiomas().add("Español");
         serie.get(6).getIdiomas().add("Ingles");
         serie.get(6).getIdiomas().add("Aleman");
@@ -541,7 +631,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(6).getSubtitulos().add("Aleman");
         serie.get(6).getComentarios().add("Buen desarrollo de personajes");
         serie.get(6).getActores().add("Walter");
-        serie.add(new series("ggggg","k",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.add(new series("ggggg", "k", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
         serie.get(7).getIdiomas().add("Español");
         serie.get(7).getIdiomas().add("Ingles");
         serie.get(7).getIdiomas().add("Aleman");
@@ -550,7 +640,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(7).getSubtitulos().add("Aleman");
         serie.get(7).getComentarios().add("Buen desarrollo de personajes");
         serie.get(7).getActores().add("Walter");
-        serie.add(new series("wwwww","w",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.add(new series("wwwww", "w", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
         serie.get(8).getIdiomas().add("Español");
         serie.get(8).getIdiomas().add("Ingles");
         serie.get(8).getIdiomas().add("Aleman");
@@ -559,7 +649,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(8).getSubtitulos().add("Aleman");
         serie.get(8).getComentarios().add("Buen desarrollo de personajes");
         serie.get(8).getActores().add("Walter");
-        serie.add(new series("yyyyyy","y",5, "Accion","50",5,"Desconocido","Desconocido"));
+        serie.add(new series("yyyyyy", "y", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
         serie.get(9).getIdiomas().add("Español");
         serie.get(9).getIdiomas().add("Ingles");
         serie.get(9).getIdiomas().add("Aleman");
@@ -579,54 +669,115 @@ public class principalLab extends javax.swing.JFrame {
 
     private void jb_agregarfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarfMouseClicked
         // TODO add your handling code here:
-        if (jl_pelis.getSelectedIndex()>=0) {
-            DefaultTreeModel m=(DefaultTreeModel) jt_favoritos.getModel();
-            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
-            DefaultListModel model = (DefaultListModel) jl_pelis.getModel();
-            DefaultMutableTreeNode cat, cat2;
-            String categoria;
-            String nombre, id, duracion, productora, director;
-            int rating;
-            id=((peliculas) model.get(jl_pelis.getSelectedIndex())).getId();
-            categoria=((peliculas) model.get(jl_pelis.getSelectedIndex())).getCategoria();
-            nombre=((peliculas) model.get(jl_pelis.getSelectedIndex())).getNombre();
-            duracion=((peliculas) model.get(jl_pelis.getSelectedIndex())).getDuracion();
-            productora=((peliculas) model.get(jl_pelis.getSelectedIndex())).getProductora();
-            rating=((peliculas) model.get(jl_pelis.getSelectedIndex())).getRating();
-            director=((peliculas) model.get(jl_pelis.getSelectedIndex())).getDirector();
-            cat=new DefaultMutableTreeNode(categoria);
-            cat2=new DefaultMutableTreeNode("Pelicula");
-            DefaultMutableTreeNode p = new DefaultMutableTreeNode(new peliculas(id,nombre,categoria, duracion,rating,productora, director));
-            cat.add(p);
-            cat2.add(cat);
-            raiz.add(cat2);
-            c2++;
-            m.reload();
-        }
-        if (jl_series.getSelectedIndex()>=0) {
-            DefaultTreeModel m=(DefaultTreeModel) jt_favoritos.getModel();
-            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
-            DefaultListModel model = (DefaultListModel) jl_series.getModel();
-            DefaultMutableTreeNode cat, cat2;
-            String categoria;
-            String nombre, id, duracion, productora, director;
-            int rating, temporadas;
-            id=((series) model.get(jl_series.getSelectedIndex())).getId();
-            categoria=((series) model.get(jl_series.getSelectedIndex())).getCategoria();
-            nombre=((series) model.get(jl_series.getSelectedIndex())).getNombre();
-            duracion=((series) model.get(jl_series.getSelectedIndex())).getDuracion();
-            productora=((series) model.get(jl_series.getSelectedIndex())).getProductora();
-            rating=((series) model.get(jl_series.getSelectedIndex())).getRating();
-            temporadas=((series) model.get(jl_series.getSelectedIndex())).getTemporadas();
-            director=((series) model.get(jl_series.getSelectedIndex())).getDirector();
-            cat=new DefaultMutableTreeNode(categoria);
-            cat2=new DefaultMutableTreeNode("Serie");
-            DefaultMutableTreeNode p = new DefaultMutableTreeNode(new series(id,nombre,temporadas,categoria, duracion,rating,productora, director));
-            cat.add(p);
-            cat2.add(cat);
-            raiz.add(cat2);
-            c++;
-            m.reload();
+        String correo = jt_correo.getText();
+        String contra = jp_pass.getText();
+        textos te = new textos("./Usuarios.txt");
+        try {
+            if (jl_pelis.getSelectedIndex() >= 0) {
+                DefaultTreeModel m = (DefaultTreeModel) jt_favoritos.getModel();
+                DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
+                DefaultListModel model = (DefaultListModel) jl_pelis.getModel();
+                DefaultMutableTreeNode cat, cat2;
+                String categoria;
+                String nombre, id, duracion, productora, director;
+                int rating;
+                ArrayList idiomas = new ArrayList();
+                ArrayList subtitulos = new ArrayList();
+                ArrayList comentarios = new ArrayList();
+                ArrayList actores = new ArrayList();
+                id = ((peliculas) model.get(jl_pelis.getSelectedIndex())).getId();
+                categoria = ((peliculas) model.get(jl_pelis.getSelectedIndex())).getCategoria();
+                nombre = ((peliculas) model.get(jl_pelis.getSelectedIndex())).getNombre();
+                duracion = ((peliculas) model.get(jl_pelis.getSelectedIndex())).getDuracion();
+                productora = ((peliculas) model.get(jl_pelis.getSelectedIndex())).getProductora();
+                rating = ((peliculas) model.get(jl_pelis.getSelectedIndex())).getRating();
+                director = ((peliculas) model.get(jl_pelis.getSelectedIndex())).getDirector();
+                idiomas.add(((peliculas) model.get(jl_pelis.getSelectedIndex())).getActores());
+                subtitulos.add(((peliculas) model.get(jl_pelis.getSelectedIndex())).getSubtitulos());
+                comentarios.add(((peliculas) model.get(jl_pelis.getSelectedIndex())).getComentarios());
+                actores.add(((peliculas) model.get(jl_pelis.getSelectedIndex())).getActores());
+                cat = new DefaultMutableTreeNode(categoria);
+                cat2 = new DefaultMutableTreeNode("Pelicula");
+                for (Usuarios u : usuario) {
+                    if (correo.equals(u.getCorreo()) && contra.equals(u.getContraseña())) {
+                        u.getPelis().add(new peliculas(id, nombre, categoria, duracion, rating, productora, director));
+                        u.getPelis().get(u.getPelis().size() - 1).getActores().add(actores);
+                        u.getPelis().get(u.getPelis().size() - 1).getIdiomas().add(idiomas);
+                        u.getPelis().get(u.getPelis().size() - 1).getComentarios().add(comentarios);
+                        u.getPelis().get(u.getPelis().size() - 1).getSubtitulos().add(subtitulos);
+                    }
+                }
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new peliculas(id, nombre, categoria, duracion, rating, productora, director));
+                cat.add(p);
+                cat2.add(cat);
+                raiz.add(cat2);
+                c2++;
+                m.reload();
+            }
+            if (jl_series.getSelectedIndex() >= 0) {
+                DefaultTreeModel m = (DefaultTreeModel) jt_favoritos.getModel();
+                DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
+                DefaultListModel model = (DefaultListModel) jl_series.getModel();
+                DefaultMutableTreeNode cat, cat2;
+                String categoria;
+                String nombre, id, duracion, productora, director;
+                int rating, temporadas;
+                ArrayList idiomas = new ArrayList();
+                ArrayList subtitulos = new ArrayList();
+                ArrayList comentarios = new ArrayList();
+                ArrayList actores = new ArrayList();
+                id = ((series) model.get(jl_series.getSelectedIndex())).getId();
+                categoria = ((series) model.get(jl_series.getSelectedIndex())).getCategoria();
+                nombre = ((series) model.get(jl_series.getSelectedIndex())).getNombre();
+                duracion = ((series) model.get(jl_series.getSelectedIndex())).getDuracion();
+                productora = ((series) model.get(jl_series.getSelectedIndex())).getProductora();
+                rating = ((series) model.get(jl_series.getSelectedIndex())).getRating();
+                temporadas = ((series) model.get(jl_series.getSelectedIndex())).getTemporadas();
+                director = ((series) model.get(jl_series.getSelectedIndex())).getDirector();
+                idiomas.add(((series) model.get(jl_series.getSelectedIndex())).getIdiomas());
+                subtitulos.add(((series) model.get(jl_series.getSelectedIndex())).getSubtitulos());
+                comentarios.add(((series) model.get(jl_series.getSelectedIndex())).getComentarios());
+                actores.add(((series) model.get(jl_series.getSelectedIndex())).getActores());
+                cat = new DefaultMutableTreeNode(categoria);
+                cat2 = new DefaultMutableTreeNode("Serie");
+                for (Usuarios u : usuario) {
+                    if (correo.equals(u.getCorreo()) && contra.equals(u.getContraseña())) {
+                        u.getSerie().add(new series(id, nombre, temporadas, categoria, duracion, rating, productora, director));
+                        u.getSerie().get(u.getSerie().size() - 1).getActores().add(actores);
+                        u.getSerie().get(u.getSerie().size() - 1).getIdiomas().add(idiomas);
+                        u.getSerie().get(u.getSerie().size() - 1).getComentarios().add(comentarios);
+                        u.getSerie().get(u.getSerie().size() - 1).getSubtitulos().add(subtitulos);
+                    }
+                }
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new series(id, nombre, temporadas, categoria, duracion, rating, productora, director));
+                cat.add(p);
+                cat2.add(cat);
+                raiz.add(cat2);
+                c++;
+                m.reload();
+            }
+            for (Usuarios u : usuario) {
+                if (correo.equals(u.getCorreo()) && contra.equals(u.getContraseña())) {
+                    File archivo = null;
+                    FileWriter fw = null;
+                    BufferedWriter bw = null;
+                    try {
+                        archivo = new File("./Usuarios.txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        // bw.newLine();
+                        bw.write(u.toString() + ";");
+                        bw.newLine();
+                        bw.flush();
+                    } catch (Exception e) {
+                    }
+                    bw.close();
+                    fw.close();
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(jd_uniflix, "Error fatal");
         }
     }//GEN-LAST:event_jb_agregarfMouseClicked
 
@@ -672,6 +823,9 @@ public class principalLab extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -685,13 +839,20 @@ public class principalLab extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JButton jb_agregarf;
     private javax.swing.JButton jb_iniciar;
     private javax.swing.JButton jb_registrarse;
+    private javax.swing.JDialog jd_admin;
     private javax.swing.JDialog jd_registrar;
     private javax.swing.JDialog jd_uniflix;
     private com.toedter.calendar.JDateChooser jdc_fecha;
+    private javax.swing.JList<String> jl_admin1;
+    private javax.swing.JList<String> jl_admin2;
     private javax.swing.JList<String> jl_pelis;
     private javax.swing.JList<String> jl_series;
     private javax.swing.JPasswordField jp_contra;
@@ -706,6 +867,6 @@ public class principalLab extends javax.swing.JFrame {
     ArrayList<Usuarios> usuario = new ArrayList();
     ArrayList<peliculas> pelicula = new ArrayList();
     ArrayList<series> serie = new ArrayList();
-    int c=0;
-    int c2=0;
+    int c = 0;
+    int c2 = 0;
 }

@@ -79,7 +79,7 @@ public class Usuarios {
 
     @Override
     public String toString() {
-        return "Usuarios{" + "correo=" + correo + ", contrase\u00f1a=" + contraseña + ", fecha=" + fecha + ", pelis=" + pelis + ", serie=" + serie + ", tarjeta=" + tarjeta + '}';
+        return "Usuarios{\n" + "correo=" + correo + ", contrase\u00f1a=" + contraseña + ", fecha=" + fecha + ", pelis=" + pelis + ", serie=" + serie + ", tarjeta=" + tarjeta + '}';
     }
     
 }
