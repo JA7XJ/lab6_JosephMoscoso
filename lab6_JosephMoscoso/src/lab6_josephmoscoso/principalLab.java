@@ -8,6 +8,8 @@ package lab6_josephmoscoso;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -181,10 +183,10 @@ public class principalLab extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(27, 27, 27)
                 .addComponent(jb_agregarf)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_uniflixLayout.createSequentialGroup()
                 .addGap(78, 78, 78)
@@ -217,7 +219,7 @@ public class principalLab extends javax.swing.JFrame {
                             .addComponent(jScrollPane2)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)))
                     .addGroup(jd_uniflixLayout.createSequentialGroup()
-                        .addGap(132, 132, 132)
+                        .addGap(131, 131, 131)
                         .addComponent(jb_agregarf)))
                 .addContainerGap(66, Short.MAX_VALUE))
         );
@@ -320,11 +322,11 @@ public class principalLab extends javax.swing.JFrame {
                     DefaultListModel m=(DefaultListModel) jl_pelis.getModel();;
                     DefaultListModel x=(DefaultListModel) jl_series.getModel();;
                     for (int i = 0; i < pelicula.size(); i++) {
-                        m.addElement(pelicula.get(i).getNombre());
+                        m.addElement(pelicula.get(i));
                         jl_pelis.setModel(m);
                     }
                     for (int i = 0; i < serie.size(); i++) {
-                        x.addElement(serie.get(i).getNombre());
+                        x.addElement(serie.get(i));
                         jl_series.setModel(x);
                     }
 //                    jl_pelis.setModel(m);
@@ -577,11 +579,54 @@ public class principalLab extends javax.swing.JFrame {
 
     private void jb_agregarfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarfMouseClicked
         // TODO add your handling code here:
-        if (jl_pelis) {
-            
+        if (jl_pelis.getSelectedIndex()>=0) {
+            DefaultTreeModel m=(DefaultTreeModel) jt_favoritos.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
+            DefaultListModel model = (DefaultListModel) jl_pelis.getModel();
+            DefaultMutableTreeNode cat, cat2;
+            String categoria;
+            String nombre, id, duracion, productora, director;
+            int rating;
+            id=((peliculas) model.get(jl_pelis.getSelectedIndex())).getId();
+            categoria=((peliculas) model.get(jl_pelis.getSelectedIndex())).getCategoria();
+            nombre=((peliculas) model.get(jl_pelis.getSelectedIndex())).getNombre();
+            duracion=((peliculas) model.get(jl_pelis.getSelectedIndex())).getDuracion();
+            productora=((peliculas) model.get(jl_pelis.getSelectedIndex())).getProductora();
+            rating=((peliculas) model.get(jl_pelis.getSelectedIndex())).getRating();
+            director=((peliculas) model.get(jl_pelis.getSelectedIndex())).getDirector();
+            cat=new DefaultMutableTreeNode(categoria);
+            cat2=new DefaultMutableTreeNode("Pelicula");
+            DefaultMutableTreeNode p = new DefaultMutableTreeNode(new peliculas(id,nombre,categoria, duracion,rating,productora, director));
+            cat.add(p);
+            cat2.add(cat);
+            raiz.add(cat2);
+            c2++;
+            m.reload();
         }
-        if (rootPaneCheckingEnabled) {
-            
+        if (jl_series.getSelectedIndex()>=0) {
+            DefaultTreeModel m=(DefaultTreeModel) jt_favoritos.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
+            DefaultListModel model = (DefaultListModel) jl_series.getModel();
+            DefaultMutableTreeNode cat, cat2;
+            String categoria;
+            String nombre, id, duracion, productora, director;
+            int rating, temporadas;
+            id=((series) model.get(jl_series.getSelectedIndex())).getId();
+            categoria=((series) model.get(jl_series.getSelectedIndex())).getCategoria();
+            nombre=((series) model.get(jl_series.getSelectedIndex())).getNombre();
+            duracion=((series) model.get(jl_series.getSelectedIndex())).getDuracion();
+            productora=((series) model.get(jl_series.getSelectedIndex())).getProductora();
+            rating=((series) model.get(jl_series.getSelectedIndex())).getRating();
+            temporadas=((series) model.get(jl_series.getSelectedIndex())).getTemporadas();
+            director=((series) model.get(jl_series.getSelectedIndex())).getDirector();
+            cat=new DefaultMutableTreeNode(categoria);
+            cat2=new DefaultMutableTreeNode("Serie");
+            DefaultMutableTreeNode p = new DefaultMutableTreeNode(new series(id,nombre,temporadas,categoria, duracion,rating,productora, director));
+            cat.add(p);
+            cat2.add(cat);
+            raiz.add(cat2);
+            c++;
+            m.reload();
         }
     }//GEN-LAST:event_jb_agregarfMouseClicked
 
@@ -661,4 +706,6 @@ public class principalLab extends javax.swing.JFrame {
     ArrayList<Usuarios> usuario = new ArrayList();
     ArrayList<peliculas> pelicula = new ArrayList();
     ArrayList<series> serie = new ArrayList();
+    int c=0;
+    int c2=0;
 }
