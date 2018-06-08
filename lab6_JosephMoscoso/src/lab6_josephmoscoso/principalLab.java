@@ -132,11 +132,11 @@ public class principalLab extends javax.swing.JFrame {
         jd_uniflix.getContentPane().setLayout(jd_uniflixLayout);
         jd_uniflixLayout.setHorizontalGroup(
             jd_uniflixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 583, Short.MAX_VALUE)
+            .addGap(0, 599, Short.MAX_VALUE)
         );
         jd_uniflixLayout.setVerticalGroup(
             jd_uniflixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
+            .addGap(0, 472, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -259,7 +259,125 @@ public class principalLab extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton1MouseClicked
-
+    public void pred() {
+        pelicula.add(new peliculas("22", "Logan", "Accion", "1:40", 5, "Fox", "Fox"));
+        pelicula.get(0).getIdiomas().add("Español");
+        pelicula.get(0).getIdiomas().add("Ingles");
+        pelicula.get(0).getIdiomas().add("Aleman");
+        pelicula.get(0).getSubtitulos().add("Español");
+        pelicula.get(0).getSubtitulos().add("Ingles");
+        pelicula.get(0).getSubtitulos().add("Aleman");
+        pelicula.get(0).getComentarios().add("Bastante emotiva");
+        pelicula.get(0).getActores().add("Hugh Jackman");
+        pelicula.add(new peliculas("33", "Clockwork Orange", "Accion/drama", "2:40", 4, "Warner", "Cubrick"));
+        pelicula.get(1).getIdiomas().add("Español");
+        pelicula.get(1).getIdiomas().add("Ingles");
+        pelicula.get(1).getIdiomas().add("Aleman");
+        pelicula.get(1).getIdiomas().add("Español");
+        pelicula.get(1).getIdiomas().add("Ingles");
+        pelicula.get(1).getIdiomas().add("Aleman");
+        pelicula.get(1).getSubtitulos().add("Español");
+        pelicula.get(1).getSubtitulos().add("Ingles");
+        pelicula.get(1).getSubtitulos().add("Aleman");
+        pelicula.get(1).getComentarios().add("Turbia a veces pero disfrutable");
+        pelicula.get(1).getActores().add("Desconocido");
+        pelicula.add(new peliculas("52", "Kill Bill", "Accion", "1:40", 4, "Warner", "Tarantino"));
+        pelicula.get(2).getIdiomas().add("Español");
+        pelicula.get(2).getIdiomas().add("Ingles");
+        pelicula.get(2).getIdiomas().add("Aleman");
+        pelicula.get(2).getIdiomas().add("Español");
+        pelicula.get(2).getIdiomas().add("Ingles");
+        pelicula.get(2).getIdiomas().add("Aleman");
+        pelicula.get(2).getSubtitulos().add("Español");
+        pelicula.get(2).getSubtitulos().add("Ingles");
+        pelicula.get(2).getSubtitulos().add("Aleman");
+        pelicula.get(2).getComentarios().add("Buena pelicula de accion");
+        pelicula.get(2).getActores().add("Desconocido");
+        pelicula.add(new peliculas("62", "Watchmen", "Accion/drama", "2:40", 4, "Fox", "Snyder"));
+        pelicula.get(3).getIdiomas().add("Español");
+        pelicula.get(3).getIdiomas().add("Ingles");
+        pelicula.get(3).getIdiomas().add("Aleman");
+        pelicula.get(3).getIdiomas().add("Español");
+        pelicula.get(3).getIdiomas().add("Ingles");
+        pelicula.get(3).getIdiomas().add("Aleman");
+        pelicula.get(3).getSubtitulos().add("Español");
+        pelicula.get(3).getSubtitulos().add("Ingles");
+        pelicula.get(3).getSubtitulos().add("Aleman");
+        pelicula.get(3).getComentarios().add("Buena adaptacion al cine de un comic");
+        pelicula.get(3).getActores().add("Desconocido");
+        pelicula.add(new peliculas("12", "Ella", "Drama", "1:40", 3, "Canada Studios", "Desconocido"));
+        pelicula.get(4).getIdiomas().add("Español");
+        pelicula.get(4).getIdiomas().add("Ingles");
+        pelicula.get(4).getIdiomas().add("Aleman");
+        pelicula.get(4).getIdiomas().add("Español");
+        pelicula.get(4).getIdiomas().add("Ingles");
+        pelicula.get(4).getIdiomas().add("Aleman");
+        pelicula.get(4).getSubtitulos().add("Español");
+        pelicula.get(4).getSubtitulos().add("Ingles");
+        pelicula.get(4).getSubtitulos().add("Aleman");
+        pelicula.get(4).getComentarios().add("Aburre");
+        pelicula.get(4).getActores().add("Desconocida");
+        pelicula.add(new peliculas("2122", "The Simpson", "Comedia", "1:20", 2, "Fox", "Matt Groening"));
+        pelicula.get(5).getIdiomas().add("Español");
+        pelicula.get(5).getIdiomas().add("Ingles");
+        pelicula.get(5).getIdiomas().add("Aleman");
+        pelicula.get(5).getIdiomas().add("Español");
+        pelicula.get(5).getIdiomas().add("Ingles");
+        pelicula.get(5).getIdiomas().add("Aleman");
+        pelicula.get(5).getSubtitulos().add("Español");
+        pelicula.get(5).getSubtitulos().add("Ingles");
+        pelicula.get(5).getSubtitulos().add("Aleman");
+        pelicula.get(5).getComentarios().add("Bastante mala como comedia pero se disfruta");
+        pelicula.get(5).getActores().add("Desconocido");
+        pelicula.add(new peliculas("3333", "The end of evangelion", "Accion/Psicologico", "1:40", 5, "Desconocido", "Hideaki Anno"));
+        pelicula.get(6).getIdiomas().add("Español");
+        pelicula.get(6).getIdiomas().add("Ingles");
+        pelicula.get(6).getIdiomas().add("Aleman");
+        pelicula.get(6).getIdiomas().add("Español");
+        pelicula.get(6).getIdiomas().add("Ingles");
+        pelicula.get(6).getIdiomas().add("Aleman");
+        pelicula.get(6).getSubtitulos().add("Español");
+        pelicula.get(6).getSubtitulos().add("Ingles");
+        pelicula.get(6).getSubtitulos().add("Aleman");
+        pelicula.get(6).getComentarios().add("Turbia con mensaje existencial");
+        pelicula.get(6).getActores().add("Desconocido");
+        pelicula.add(new peliculas("ewq", "Pacific Rim", "Accion", "1:50", 5, "Fox", "Guillermo del Toro"));
+        pelicula.get(7).getIdiomas().add("Español");
+        pelicula.get(7).getIdiomas().add("Ingles");
+        pelicula.get(7).getIdiomas().add("Aleman");
+        pelicula.get(7).getIdiomas().add("Español");
+        pelicula.get(7).getIdiomas().add("Ingles");
+        pelicula.get(7).getIdiomas().add("Aleman");
+        pelicula.get(7).getSubtitulos().add("Español");
+        pelicula.get(7).getSubtitulos().add("Ingles");
+        pelicula.get(7).getSubtitulos().add("Aleman");
+        pelicula.get(7).getComentarios().add("Se parece a evangelion");
+        pelicula.get(7).getActores().add("Desconocido");
+        pelicula.add(new peliculas("eee", "Your Name", "Drama/comedia", "1:30", 4, "Desconocida", "Desconocida"));
+        pelicula.get(8).getIdiomas().add("Español");
+        pelicula.get(8).getIdiomas().add("Ingles");
+        pelicula.get(8).getIdiomas().add("Aleman");
+        pelicula.get(8).getIdiomas().add("Español");
+        pelicula.get(8).getIdiomas().add("Ingles");
+        pelicula.get(8).getIdiomas().add("Aleman");
+        pelicula.get(8).getSubtitulos().add("Español");
+        pelicula.get(8).getSubtitulos().add("Ingles");
+        pelicula.get(8).getSubtitulos().add("Aleman");
+        pelicula.get(8).getComentarios().add("buen");
+        pelicula.get(8).getActores().add("Desconocida");
+        pelicula.add(new peliculas("x", "Die Hard", "Accion", "1:40", 1, "?", "?"));
+        pelicula.get(9).getIdiomas().add("Español");
+        pelicula.get(9).getIdiomas().add("Ingles");
+        pelicula.get(9).getIdiomas().add("Aleman");
+        pelicula.get(9).getIdiomas().add("Español");
+        pelicula.get(9).getIdiomas().add("Ingles");
+        pelicula.get(9).getIdiomas().add("Aleman");
+        pelicula.get(9).getSubtitulos().add("Español");
+        pelicula.get(9).getSubtitulos().add("Ingles");
+        pelicula.get(9).getSubtitulos().add("Aleman");
+        pelicula.get(9).getComentarios().add("Accion del monton");
+        pelicula.get(9).getActores().add("Bruce Willis");
+    }
     private void jb_registrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_registrarseMouseClicked
         // TODO add your handling code here:
         jd_registrar.setModal(true);
@@ -329,4 +447,6 @@ public class principalLab extends javax.swing.JFrame {
     String usuarioa = "Admin";
     String contraa = "Admin";
     ArrayList<Usuarios> usuario = new ArrayList();
+    ArrayList<peliculas> pelicula = new ArrayList();
+    ArrayList<series> serie = new ArrayList();
 }
