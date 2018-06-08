@@ -73,6 +73,7 @@ public class principalLab extends javax.swing.JFrame {
         jl_admin1 = new javax.swing.JList<>();
         jScrollPane7 = new javax.swing.JScrollPane();
         jl_admin2 = new javax.swing.JList<>();
+        jLabel17 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
@@ -83,6 +84,7 @@ public class principalLab extends javax.swing.JFrame {
         jp_pass = new javax.swing.JPasswordField();
         jb_iniciar = new javax.swing.JButton();
         jb_registrarse = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         jLabel5.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         jLabel5.setText("Por favor, ingrese sus datos correctamente ");
@@ -258,42 +260,51 @@ public class principalLab extends javax.swing.JFrame {
         jl_admin2.setModel(new DefaultListModel());
         jScrollPane7.setViewportView(jl_admin2);
 
+        jLabel17.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        jLabel17.setText("Haga click derecho dentro de cualquier lista para ver opciones");
+
         javax.swing.GroupLayout jd_adminLayout = new javax.swing.GroupLayout(jd_admin.getContentPane());
         jd_admin.getContentPane().setLayout(jd_adminLayout);
         jd_adminLayout.setHorizontalGroup(
             jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_adminLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addComponent(jLabel15)
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel16)
-                .addGap(134, 134, 134))
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
             .addGroup(jd_adminLayout.createSequentialGroup()
                 .addGroup(jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_adminLayout.createSequentialGroup()
-                        .addGap(208, 208, 208)
+                        .addGap(258, 258, 258)
                         .addComponent(jLabel14))
                     .addGroup(jd_adminLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(63, 63, 63)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                        .addGap(86, 86, 86)
+                        .addComponent(jLabel17)))
+                .addContainerGap(90, Short.MAX_VALUE))
+            .addGroup(jd_adminLayout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel16)
+                .addGap(124, 124, 124))
         );
         jd_adminLayout.setVerticalGroup(
             jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_adminLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel17)
+                .addGap(26, 26, 26)
                 .addGroup(jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
-                    .addComponent(jScrollPane7))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         jTextArea2.setColumns(20);
@@ -328,6 +339,13 @@ public class principalLab extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Ayuda (administrador)");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -353,9 +371,11 @@ public class principalLab extends javax.swing.JFrame {
                             .addComponent(jt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jp_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
+                        .addGap(71, 71, 71)
                         .addComponent(jb_iniciar)
-                        .addGap(140, 140, 140)
+                        .addGap(53, 53, 53)
+                        .addComponent(jButton2)
+                        .addGap(46, 46, 46)
                         .addComponent(jb_registrarse)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -377,7 +397,8 @@ public class principalLab extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_iniciar)
-                    .addComponent(jb_registrarse))
+                    .addComponent(jb_registrarse)
+                    .addComponent(jButton2))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -410,25 +431,24 @@ public class principalLab extends javax.swing.JFrame {
                 } else {
                     JOptionPane.showMessageDialog(this, "Error, correo o contraseña incorrectos");
                 }
-                if (correo.equals("Admin") && contra.equals("Admin")) {
-                    DefaultListModel m = (DefaultListModel) jl_pelis.getModel();;
-                    DefaultListModel x = (DefaultListModel) jl_series.getModel();;
-                    for (int i = 0; i < pelicula.size(); i++) {
-                        m.addElement(pelicula.get(i));
-                        jl_pelis.setModel(m);
-                    }
-                    for (int i = 0; i < serie.size(); i++) {
-                        x.addElement(serie.get(i));
-                        jl_series.setModel(x);
-                    }
+            }
+            if (correo.equals(usuarioa) && contra.equals(contraa)) {
+                DefaultListModel m = (DefaultListModel) jl_admin1.getModel();;
+                DefaultListModel x = (DefaultListModel) jl_admin2.getModel();;
+                for (int i = 0; i < pelicula.size(); i++) {
+                    m.addElement(pelicula.get(i));
+                    jl_admin1.setModel(m);
+                }
+                for (int i = 0; i < serie.size(); i++) {
+                    x.addElement(serie.get(i));
+                    jl_admin2.setModel(x);
+                }
 //                    jl_pelis.setModel(m);
 //                    jl_series.setModel(x);
-                    jd_admin.setModal(true);
-                    jd_admin.pack();
-                    jd_admin.setLocationRelativeTo(this);
-                    jd_admin.setVisible(true);
-                }
-
+                jd_admin.setModal(true);
+                jd_admin.pack();
+                jd_admin.setLocationRelativeTo(this);
+                jd_admin.setVisible(true);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error, datos incorrectos");
@@ -781,6 +801,11 @@ public class principalLab extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_agregarfMouseClicked
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Correo=Admin\nContraseña=Admin");
+    }//GEN-LAST:event_jButton2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -818,6 +843,7 @@ public class principalLab extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -826,6 +852,7 @@ public class principalLab extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
