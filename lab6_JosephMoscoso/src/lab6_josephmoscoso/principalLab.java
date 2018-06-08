@@ -6,6 +6,7 @@
 package lab6_josephmoscoso;
 
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -44,6 +45,19 @@ public class principalLab extends javax.swing.JFrame {
         jt_tarjeta = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jd_uniflix = new javax.swing.JDialog();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jl_series = new javax.swing.JList<>();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jl_pelis = new javax.swing.JList<>();
+        jLabel13 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jt_favoritos = new javax.swing.JTree();
+        jb_agregarf = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -129,16 +143,88 @@ public class principalLab extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        jLabel10.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel10.setText("Seleccione la pelicula/serie y luego de click al boton para agregar");
+
+        jl_series.setModel(new DefaultListModel());
+        jScrollPane1.setViewportView(jl_series);
+
+        jLabel11.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel11.setText("Series");
+
+        jLabel12.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel12.setText("Peliculas");
+
+        jl_pelis.setModel(new DefaultListModel());
+        jScrollPane2.setViewportView(jl_pelis);
+
+        jLabel13.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel13.setText("Preferidas");
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Favoritos");
+        jt_favoritos.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane3.setViewportView(jt_favoritos);
+
+        jb_agregarf.setText("------->");
+        jb_agregarf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_agregarfMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jd_uniflixLayout = new javax.swing.GroupLayout(jd_uniflix.getContentPane());
         jd_uniflix.getContentPane().setLayout(jd_uniflixLayout);
         jd_uniflixLayout.setHorizontalGroup(
             jd_uniflixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 599, Short.MAX_VALUE)
+            .addGroup(jd_uniflixLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jb_agregarf)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_uniflixLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(jLabel11)
+                .addGap(163, 163, 163)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addGap(77, 77, 77))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_uniflixLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(123, 123, 123))
         );
         jd_uniflixLayout.setVerticalGroup(
             jd_uniflixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 472, Short.MAX_VALUE)
+            .addGroup(jd_uniflixLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addGroup(jd_uniflixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13))
+                .addGroup(jd_uniflixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_uniflixLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jd_uniflixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1)
+                            .addComponent(jScrollPane2)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)))
+                    .addGroup(jd_uniflixLayout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(jb_agregarf)))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane4.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -231,6 +317,18 @@ public class principalLab extends javax.swing.JFrame {
         try {
             for (Usuarios u : usuario) {
                 if (correo.equals(u.getCorreo()) && contra.equals(u.getContraseña())) {
+                    DefaultListModel m=(DefaultListModel) jl_pelis.getModel();;
+                    DefaultListModel x=(DefaultListModel) jl_series.getModel();;
+                    for (int i = 0; i < pelicula.size(); i++) {
+                        m.addElement(pelicula.get(i).getNombre());
+                        jl_pelis.setModel(m);
+                    }
+                    for (int i = 0; i < serie.size(); i++) {
+                        x.addElement(serie.get(i).getNombre());
+                        jl_series.setModel(x);
+                    }
+//                    jl_pelis.setModel(m);
+//                    jl_series.setModel(x);
                     jd_uniflix.setModal(true);
                     jd_uniflix.pack();
                     jd_uniflix.setLocationRelativeTo(this);
@@ -477,6 +575,16 @@ public class principalLab extends javax.swing.JFrame {
         jd_registrar.setVisible(true);
     }//GEN-LAST:event_jb_registrarseMouseClicked
 
+    private void jb_agregarfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarfMouseClicked
+        // TODO add your handling code here:
+        if (jl_pelis) {
+            
+        }
+        if (rootPaneCheckingEnabled) {
+            
+        }
+    }//GEN-LAST:event_jb_agregarfMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -515,6 +623,10 @@ public class principalLab extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -524,14 +636,23 @@ public class principalLab extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton jb_agregarf;
     private javax.swing.JButton jb_iniciar;
     private javax.swing.JButton jb_registrarse;
     private javax.swing.JDialog jd_registrar;
     private javax.swing.JDialog jd_uniflix;
     private com.toedter.calendar.JDateChooser jdc_fecha;
+    private javax.swing.JList<String> jl_pelis;
+    private javax.swing.JList<String> jl_series;
     private javax.swing.JPasswordField jp_contra;
     private javax.swing.JPasswordField jp_pass;
     private javax.swing.JTextField jt_correo;
+    private javax.swing.JTree jt_favoritos;
     private javax.swing.JTextField jt_regc;
     private javax.swing.JTextField jt_tarjeta;
     // End of variables declaration//GEN-END:variables
