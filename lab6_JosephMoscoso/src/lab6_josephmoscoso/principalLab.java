@@ -5,6 +5,9 @@
  */
 package lab6_josephmoscoso;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author joseph
@@ -28,6 +31,18 @@ public class principalLab extends javax.swing.JFrame {
     private void initComponents() {
 
         jProgressBar1 = new javax.swing.JProgressBar();
+        jd_registrar = new javax.swing.JDialog();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jt_regc = new javax.swing.JTextField();
+        jp_contra = new javax.swing.JPasswordField();
+        jdc_fecha = new com.toedter.calendar.JDateChooser();
+        jt_tarjeta = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jd_uniflix = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -36,6 +51,93 @@ public class principalLab extends javax.swing.JFrame {
         jp_pass = new javax.swing.JPasswordField();
         jb_iniciar = new javax.swing.JButton();
         jb_registrarse = new javax.swing.JButton();
+
+        jLabel5.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel5.setText("Por favor, ingrese sus datos correctamente ");
+
+        jLabel6.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel6.setText("Correo electronico");
+
+        jLabel7.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel7.setText("Contraseña");
+
+        jLabel8.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel8.setText("Fecha de nacimiento");
+
+        jLabel9.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jLabel9.setText("Tarjeta de credito");
+
+        jButton1.setText("Registrar usuario");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_registrarLayout = new javax.swing.GroupLayout(jd_registrar.getContentPane());
+        jd_registrar.getContentPane().setLayout(jd_registrarLayout);
+        jd_registrarLayout.setHorizontalGroup(
+            jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_registrarLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jt_regc, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                    .addComponent(jp_contra)
+                    .addComponent(jdc_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jt_tarjeta))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_registrarLayout.createSequentialGroup()
+                .addContainerGap(42, Short.MAX_VALUE)
+                .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_registrarLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(41, 41, 41))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_registrarLayout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(228, 228, 228))))
+        );
+        jd_registrarLayout.setVerticalGroup(
+            jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_registrarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addGap(19, 19, 19)
+                .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jt_regc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jp_contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jdc_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_registrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jt_tarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jd_uniflixLayout = new javax.swing.GroupLayout(jd_uniflix.getContentPane());
+        jd_uniflix.getContentPane().setLayout(jd_uniflixLayout);
+        jd_uniflixLayout.setHorizontalGroup(
+            jd_uniflixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 583, Short.MAX_VALUE)
+        );
+        jd_uniflixLayout.setVerticalGroup(
+            jd_uniflixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 432, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +161,11 @@ public class principalLab extends javax.swing.JFrame {
         });
 
         jb_registrarse.setText("Registrarse");
+        jb_registrarse.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_registrarseMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,8 +225,48 @@ public class principalLab extends javax.swing.JFrame {
 
     private void jb_iniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_iniciarMouseClicked
         // TODO add your handling code here:
-        
+        String correo = jt_correo.getText();
+        String contra = jp_pass.getText();
+        try {
+            for (Usuarios u : usuario) {
+                if (correo.equals(u.getCorreo()) && contra.equals(u.getContraseña())) {
+                    jd_uniflix.setModal(true);
+                    jd_uniflix.pack();
+                    jd_uniflix.setLocationRelativeTo(this);
+                    jd_uniflix.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Error, correo o contraseña incorrectos");
+                }
+
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error, datos incorrectos");
+        }
     }//GEN-LAST:event_jb_iniciarMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        try {
+            String correo = jt_regc.getText();
+            String contra = jp_contra.getText();
+            String date = jdc_fecha.getDate().toString();
+            String tarjeta = jt_tarjeta.getText();
+            usuario.add(new Usuarios(correo, contra, date, tarjeta));
+            JOptionPane.showMessageDialog(jd_registrar, "Usuario registrado con exito");
+            jd_registrar.setVisible(false);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(jd_registrar, "Error al registrar usuario, verifique sus datos");
+        }
+
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jb_registrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_registrarseMouseClicked
+        // TODO add your handling code here:
+        jd_registrar.setModal(true);
+        jd_registrar.pack();
+        jd_registrar.setLocationRelativeTo(this);
+        jd_registrar.setVisible(true);
+    }//GEN-LAST:event_jb_registrarseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -157,16 +304,29 @@ public class principalLab extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JButton jb_iniciar;
     private javax.swing.JButton jb_registrarse;
+    private javax.swing.JDialog jd_registrar;
+    private javax.swing.JDialog jd_uniflix;
+    private com.toedter.calendar.JDateChooser jdc_fecha;
+    private javax.swing.JPasswordField jp_contra;
     private javax.swing.JPasswordField jp_pass;
     private javax.swing.JTextField jt_correo;
+    private javax.swing.JTextField jt_regc;
+    private javax.swing.JTextField jt_tarjeta;
     // End of variables declaration//GEN-END:variables
-String usuarioa="Admin";
-String contraa="Admin";
+    String usuarioa = "Admin";
+    String contraa = "Admin";
+    ArrayList<Usuarios> usuario = new ArrayList();
 }
