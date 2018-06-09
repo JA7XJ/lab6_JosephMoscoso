@@ -1,4 +1,0 @@
-Usuarios{
-correo=e, contraseña=e, fecha=Sat Jun 09 17:10:36 CST 2018, pelis=[Watchmen], serie=[], tarjeta=e};
-Usuarios{
-correo=e, contraseña=e, fecha=Sat Jun 09 17:10:36 CST 2018, pelis=[Watchmen, Watchmen], serie=[House of Cards], tarjeta=e};

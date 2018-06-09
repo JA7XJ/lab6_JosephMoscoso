@@ -917,6 +917,16 @@ public class principalLab extends javax.swing.JFrame {
                 subtitulos.add(((peliculas) model.get(jl_pelis.getSelectedIndex())).getSubtitulos());
                 comentarios.add(((peliculas) model.get(jl_pelis.getSelectedIndex())).getComentarios());
                 actores.add(((peliculas) model.get(jl_pelis.getSelectedIndex())).getActores());
+                int centinela = -1, centinela2 = -1;
+                for (int i = 0; i < raiz.getChildCount(); i++) {
+                    if (raiz.getChildAt(i).toString().equals("Pelicula")) {
+                        cat = new DefaultMutableTreeNode(categoria);
+                        DefaultMutableTreeNode p = new DefaultMutableTreeNode(new peliculas(id, nombre, categoria, duracion, rating, productora, director));
+                        cat.add(p);
+                        ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(cat);
+                        centinela = 1;
+                    }
+                }
                 cat = new DefaultMutableTreeNode(categoria);
                 cat2 = new DefaultMutableTreeNode("Pelicula");
                 for (Usuarios u : usuario) {
@@ -928,11 +938,17 @@ public class principalLab extends javax.swing.JFrame {
                         u.getPelis().get(u.getPelis().size() - 1).getSubtitulos().add(subtitulos);
                     }
                 }
-                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new peliculas(id, nombre, categoria, duracion, rating, productora, director));
+                if (centinela == -1) {
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(new peliculas(id, nombre, categoria, duracion, rating, productora, director));
+                    cat.add(p);
+                    cat2.add(cat);
+                    raiz.add(cat2);
+                }
+                /*DefaultMutableTreeNode p = new DefaultMutableTreeNode(new peliculas(id, nombre, categoria, duracion, rating, productora, director));
                 cat.add(p);
                 cat2.add(cat);
                 raiz.add(cat2);
-                c2++;
+                c2++;*/
                 m.reload();
             }
             if (jl_series.getSelectedIndex() >= 0) {
@@ -959,6 +975,17 @@ public class principalLab extends javax.swing.JFrame {
                 subtitulos.add(((series) model.get(jl_series.getSelectedIndex())).getSubtitulos());
                 comentarios.add(((series) model.get(jl_series.getSelectedIndex())).getComentarios());
                 actores.add(((series) model.get(jl_series.getSelectedIndex())).getActores());
+                int centinela = -1, centinela2 = -1;
+                for (int i = 0; i < raiz.getChildCount(); i++) {
+                    if (raiz.getChildAt(i).toString().equals("Serie")) {
+                        cat = new DefaultMutableTreeNode(categoria);
+                        DefaultMutableTreeNode p = new DefaultMutableTreeNode(new series(id, nombre, temporadas, categoria, duracion, rating, productora, director));
+                        cat.add(p);
+                        ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(cat);
+                        centinela = 1;
+                    }
+                }
+
                 cat = new DefaultMutableTreeNode(categoria);
                 cat2 = new DefaultMutableTreeNode("Serie");
                 for (Usuarios u : usuario) {
@@ -970,11 +997,17 @@ public class principalLab extends javax.swing.JFrame {
                         u.getSerie().get(u.getSerie().size() - 1).getSubtitulos().add(subtitulos);
                     }
                 }
-                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new series(id, nombre, temporadas, categoria, duracion, rating, productora, director));
+                if (centinela == -1) {
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(new series(id, nombre, temporadas, categoria, duracion, rating, productora, director));
+                    cat.add(p);
+                    cat2.add(cat);
+                    raiz.add(cat2);
+                }
+                /*DefaultMutableTreeNode p = new DefaultMutableTreeNode(new series(id, nombre, temporadas, categoria, duracion, rating, productora, director));
                 cat.add(p);
                 cat2.add(cat);
                 raiz.add(cat2);
-                c++;
+                c++;*/
                 m.reload();
             }
             for (Usuarios u : usuario) {
@@ -1043,19 +1076,19 @@ public class principalLab extends javax.swing.JFrame {
 
     private void jb_agregarpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarpMouseClicked
         // TODO add your handling code here:
-        String id=jt_id.getText();
-        String nombre=jt_nombrep.getText();
-        String categoria=jt_categoriap.getText();
-        String duracion=jt_duracionp.getText();
-        int rating=Integer.parseInt(ratingp.getText());
-        String productora=jt_productorap.getText();
-        String director=jt_directorp.getText();
+        String id = jt_id.getText();
+        String nombre = jt_nombrep.getText();
+        String categoria = jt_categoriap.getText();
+        String duracion = jt_duracionp.getText();
+        int rating = Integer.parseInt(ratingp.getText());
+        String productora = jt_productorap.getText();
+        String director = jt_directorp.getText();
         pelicula.add(new peliculas(id, nombre, categoria, duracion, rating, productora, director));
     }//GEN-LAST:event_jb_agregarpMouseClicked
 
     /**
-         * @param args the command line arguments
-         */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
