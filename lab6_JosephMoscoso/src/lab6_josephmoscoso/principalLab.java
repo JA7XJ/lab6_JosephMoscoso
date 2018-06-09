@@ -1175,7 +1175,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(4).getSubtitulos().add("Aleman");
         serie.get(4).getComentarios().add("Buen desarrollo de personajes");
         serie.get(4).getActores().add("Walter");
-        serie.add(new series("zzzzzz", "x", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
+        serie.add(new series("zzzzzz", "Teen Titans", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
         serie.get(5).getIdiomas().add("Español");
         serie.get(5).getIdiomas().add("Ingles");
         serie.get(5).getIdiomas().add("Aleman");
@@ -1193,7 +1193,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(6).getSubtitulos().add("Aleman");
         serie.get(6).getComentarios().add("Buen desarrollo de personajes");
         serie.get(6).getActores().add("Walter");
-        serie.add(new series("ggggg", "k", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
+        serie.add(new series("ggggg", "Hitler", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
         serie.get(7).getIdiomas().add("Español");
         serie.get(7).getIdiomas().add("Ingles");
         serie.get(7).getIdiomas().add("Aleman");
@@ -1202,7 +1202,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(7).getSubtitulos().add("Aleman");
         serie.get(7).getComentarios().add("Buen desarrollo de personajes");
         serie.get(7).getActores().add("Walter");
-        serie.add(new series("wwwww", "w", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
+        serie.add(new series("wwwww", "Monster", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
         serie.get(8).getIdiomas().add("Español");
         serie.get(8).getIdiomas().add("Ingles");
         serie.get(8).getIdiomas().add("Aleman");
@@ -1211,7 +1211,7 @@ public class principalLab extends javax.swing.JFrame {
         serie.get(8).getSubtitulos().add("Aleman");
         serie.get(8).getComentarios().add("Buen desarrollo de personajes");
         serie.get(8).getActores().add("Walter");
-        serie.add(new series("yyyyyy", "y", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
+        serie.add(new series("yyyyyy", "Minecraft", 5, "Accion", "50", 5, "Desconocido", "Desconocido"));
         serie.get(9).getIdiomas().add("Español");
         serie.get(9).getIdiomas().add("Ingles");
         serie.get(9).getIdiomas().add("Aleman");
