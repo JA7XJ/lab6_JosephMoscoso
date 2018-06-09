@@ -104,6 +104,24 @@ public class principalLab extends javax.swing.JFrame {
         jb_agregarp = new javax.swing.JButton();
         modseries = new javax.swing.JDialog();
         agseries = new javax.swing.JDialog();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jt_id1 = new javax.swing.JTextField();
+        jt_productorap1 = new javax.swing.JTextField();
+        jt_directorp1 = new javax.swing.JTextField();
+        jb_agregarp1 = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        jt_nombrep1 = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        jt_categoriap1 = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        jt_duracionp1 = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        ratingp1 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jt_temporadas = new javax.swing.JTextField();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
@@ -368,15 +386,30 @@ public class principalLab extends javax.swing.JFrame {
         menupelis.add(m1_modificar);
 
         m1_eliminar.setText("Eliminar");
+        m1_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                m1_eliminarActionPerformed(evt);
+            }
+        });
         menupelis.add(m1_eliminar);
 
         Agregar.setText("Agregar");
+        Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarActionPerformed(evt);
+            }
+        });
         menuseries.add(Agregar);
 
         Modificar.setText("Modificar");
         menuseries.add(Modificar);
 
         Eliminar.setText("Eliminar");
+        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarActionPerformed(evt);
+            }
+        });
         menuseries.add(Eliminar);
 
         javax.swing.GroupLayout modpelisLayout = new javax.swing.GroupLayout(modpelis.getContentPane());
@@ -440,9 +473,8 @@ public class principalLab extends javax.swing.JFrame {
                             .addComponent(jt_categoriap)
                             .addComponent(jt_duracionp, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ratingp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(agpelisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jt_directorp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
-                                .addComponent(jt_productorap, javax.swing.GroupLayout.Alignment.LEADING))))
+                            .addComponent(jt_directorp, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+                            .addComponent(jt_productorap)))
                     .addGroup(agpelisLayout.createSequentialGroup()
                         .addGap(205, 205, 205)
                         .addComponent(jb_agregarp)))
@@ -497,15 +529,107 @@ public class principalLab extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        jLabel26.setText("Id");
+
+        jLabel27.setText("Director");
+
+        jb_agregarp1.setText("Agregar");
+        jb_agregarp1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_agregarp1MouseClicked(evt);
+            }
+        });
+
+        jLabel28.setText("Nombre");
+
+        jLabel29.setText("Categoria");
+
+        jLabel30.setText("Duracion");
+
+        jLabel31.setText("Rating");
+
+        jLabel32.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel32.setText("Agregar");
+
+        jLabel33.setText("Productora");
+
+        jLabel34.setText("Temporadas");
+
         javax.swing.GroupLayout agseriesLayout = new javax.swing.GroupLayout(agseries.getContentPane());
         agseries.getContentPane().setLayout(agseriesLayout);
         agseriesLayout.setHorizontalGroup(
             agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(agseriesLayout.createSequentialGroup()
+                .addGroup(agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(agseriesLayout.createSequentialGroup()
+                        .addGap(201, 201, 201)
+                        .addComponent(jLabel32))
+                    .addGroup(agseriesLayout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addGroup(agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel28)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel31)
+                            .addComponent(jLabel33)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel34))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jt_id1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jt_nombrep1, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
+                            .addComponent(jt_categoriap1)
+                            .addComponent(jt_duracionp1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ratingp1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jt_directorp1, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
+                            .addComponent(jt_productorap1)
+                            .addComponent(jt_temporadas, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(agseriesLayout.createSequentialGroup()
+                        .addGap(199, 199, 199)
+                        .addComponent(jb_agregarp1)))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         agseriesLayout.setVerticalGroup(
             agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(agseriesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel32)
+                .addGap(18, 18, 18)
+                .addGroup(agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(jt_id1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(jt_nombrep1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(jt_temporadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addGroup(agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(jt_categoriap1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(jt_duracionp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(ratingp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(jt_productorap1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(agseriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(jt_directorp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addComponent(jb_agregarp1)
+                .addGap(26, 26, 26))
         );
 
         jTextArea3.setColumns(20);
@@ -1086,6 +1210,49 @@ public class principalLab extends javax.swing.JFrame {
         pelicula.add(new peliculas(id, nombre, categoria, duracion, rating, productora, director));
     }//GEN-LAST:event_jb_agregarpMouseClicked
 
+    private void m1_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m1_eliminarActionPerformed
+        // TODO add your handling code here:
+        if (jl_admin1.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_admin1.getModel();
+            int c = jl_admin1.getSelectedIndex();
+            pelicula.remove(c);
+            modelo.remove(jl_admin1.getSelectedIndex());
+            //jl_personas.remove(c);
+        }
+    }//GEN-LAST:event_m1_eliminarActionPerformed
+
+    private void jb_agregarp1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarp1MouseClicked
+        // TODO add your handling code here:
+        String id = jt_id1.getText();
+        String nombre = jt_nombrep1.getText();
+        int temporadas = Integer.parseInt(jt_temporadas.getText());
+        String categoria = jt_categoriap1.getText();
+        String duracion = jt_duracionp1.getText();
+        int rating = Integer.parseInt(ratingp1.getText());
+        String productora = jt_productorap1.getText();
+        String director = jt_directorp1.getText();
+        serie.add(new series(id, nombre, temporadas, categoria, duracion, rating, productora, director));
+    }//GEN-LAST:event_jb_agregarp1MouseClicked
+
+    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
+        // TODO add your handling code here:
+        agseries.setModal(true);
+        agseries.pack();
+        agseries.setLocationRelativeTo(this);
+        agseries.setVisible(true);
+    }//GEN-LAST:event_AgregarActionPerformed
+
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+        // TODO add your handling code here:
+        if (jl_admin2.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_admin2.getModel();
+            int c = jl_admin2.getSelectedIndex();
+            serie.remove(c);
+            modelo.remove(jl_admin2.getSelectedIndex());
+            //jl_personas.remove(c);
+        }
+    }//GEN-LAST:event_EliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1147,7 +1314,16 @@ public class principalLab extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1168,6 +1344,7 @@ public class principalLab extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JButton jb_agregarf;
     private javax.swing.JButton jb_agregarp;
+    private javax.swing.JButton jb_agregarp1;
     private javax.swing.JButton jb_iniciar;
     private javax.swing.JButton jb_registrarse;
     private javax.swing.JDialog jd_admin;
@@ -1181,15 +1358,22 @@ public class principalLab extends javax.swing.JFrame {
     private javax.swing.JPasswordField jp_contra;
     private javax.swing.JPasswordField jp_pass;
     private javax.swing.JTextField jt_categoriap;
+    private javax.swing.JTextField jt_categoriap1;
     private javax.swing.JTextField jt_correo;
     private javax.swing.JTextField jt_directorp;
+    private javax.swing.JTextField jt_directorp1;
     private javax.swing.JTextField jt_duracionp;
+    private javax.swing.JTextField jt_duracionp1;
     private javax.swing.JTree jt_favoritos;
     private javax.swing.JTextField jt_id;
+    private javax.swing.JTextField jt_id1;
     private javax.swing.JTextField jt_nombrep;
+    private javax.swing.JTextField jt_nombrep1;
     private javax.swing.JTextField jt_productorap;
+    private javax.swing.JTextField jt_productorap1;
     private javax.swing.JTextField jt_regc;
     private javax.swing.JTextField jt_tarjeta;
+    private javax.swing.JTextField jt_temporadas;
     private javax.swing.JMenuItem m1_agregar;
     private javax.swing.JMenuItem m1_eliminar;
     private javax.swing.JMenuItem m1_modificar;
@@ -1198,6 +1382,7 @@ public class principalLab extends javax.swing.JFrame {
     private javax.swing.JDialog modpelis;
     private javax.swing.JDialog modseries;
     private javax.swing.JTextField ratingp;
+    private javax.swing.JTextField ratingp1;
     // End of variables declaration//GEN-END:variables
     String usuarioa = "Admin";
     String contraa = "Admin";
